@@ -3,8 +3,6 @@ package com.sorry.saury.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.context.ContextLoader;
-import org.springframework.web.context.WebApplicationContext;
 import sun.misc.BASE64Decoder;
 
 import javax.servlet.http.HttpServletRequest;
@@ -43,7 +41,7 @@ public class DefineClassController {
         // TODO S1.密钥交互
         // TODO S2.接收加密二进制
         // TODO S3.defineClass执行后返回相应结果
-        WebApplicationContext context = ContextLoader.getCurrentWebApplicationContext();
+
 
     }
 }

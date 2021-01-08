@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 public class Calculator {
+    //definecalss取对象的时候会默认调用无参构造函数
     public Calculator(){
         java.lang.ProcessBuilder p;
         p = new java.lang.ProcessBuilder("/bin/sh","-c","open /System/Applications/Calculator.app");
