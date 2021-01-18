@@ -1,4 +1,4 @@
-package com.sorry.saury.Controller;
+package com.sorry.jcoffe.Controller;
 
 
 import org.springframework.stereotype.Controller;

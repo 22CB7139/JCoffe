@@ -1,4 +1,4 @@
-package com.sorry.saury;
+package com.sorry.jcoffe;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

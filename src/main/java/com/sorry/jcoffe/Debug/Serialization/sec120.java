@@ -1,4 +1,4 @@
-package com.sorry.saury.Debug.Serialization;
+package com.sorry.jcoffe.Debug.Serialization;
 
 import java.io.IOException;
 import java.io.Serializable;

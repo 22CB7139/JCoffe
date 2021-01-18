@@ -1,4 +1,4 @@
-package com.sorry.saury.Debug.Reflection;
+package com.sorry.jcoffe.Debug.Reflection;
 
 public class Person {
     private String name;

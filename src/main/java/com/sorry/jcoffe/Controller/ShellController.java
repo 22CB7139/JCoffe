@@ -1,12 +1,10 @@
-package com.sorry.saury.Controller;
+package com.sorry.jcoffe.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
 
 @Controller
 public class ShellController {

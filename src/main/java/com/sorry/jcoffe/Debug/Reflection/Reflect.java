@@ -1,11 +1,11 @@
-package com.sorry.saury.Debug.Reflection;
+package com.sorry.jcoffe.Debug.Reflection;
 
 public class Reflect {
 
     public static void main(String[] args) throws Exception {
         //反射获取对象的三种方式
         //1.Class.forName()
-        Class clazz1 = Class.forName("com.sorry.saury.Debug.Reflection.Person");
+        Class clazz1 = Class.forName("com.sorry.jcoffe.Debug.Reflection.Person");
         //2.*.class
         Class clazz2 = Person.class;
         //3.getClass()
