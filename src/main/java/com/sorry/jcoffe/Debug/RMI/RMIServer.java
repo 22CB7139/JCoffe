@@ -1,16 +1,17 @@
 package com.sorry.jcoffe.Debug.RMI;
 
+import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import java.rmi.server.UnicastRemoteObject;
 
 public class RMIServer {
-    public static void main(String[] args) throws Exception{
-        EXP exp = new EXPImpl();
-        EXP stub = (EXP) UnicastRemoteObject.exportObject(exp,1099);
-        LocateRegistry.createRegistry(1099);
-        Registry registry = LocateRegistry.getRegistry();
-        registry.bind("EXP",stub);
-        System.out.println("EXP Ready");
+    public static void main(String[] args) throws RemoteException {
+        try{
+            LocateRegistry.createRegistry(1099);
+            LocateRegistry.getRegistry("localhost",1099).bind("EXP",new EXPImpl());
+            System.out.println("EXP RMIServer Ready!");
+        }catch (Exception e){
+            //todo nothing
+        }
+
     }
 }

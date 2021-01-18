@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.sorry</groupId>
-    <artifactId>day1</artifactId>
+    <artifactId>Jcoffe</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>day1</name>
+    <name>Jcoffe</name>
     <description>Learning Spring</description>
 
     <properties>
@@ -38,6 +38,10 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.sorry.jcoffe.Debug.RMI.RMIServer</mainClass>
+                </configuration>
+
             </plugin>
         </plugins>
     </build>

@@ -1,8 +1,13 @@
 package com.sorry.jcoffe.Debug.RMI;
 
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
 import java.util.Scanner;
 
-public class EXPImpl implements EXP {
+public class EXPImpl extends UnicastRemoteObject implements EXP {
+
+    protected EXPImpl() throws RemoteException {
+    }
 
     @Override
     public void Exploit(String cmd) {
