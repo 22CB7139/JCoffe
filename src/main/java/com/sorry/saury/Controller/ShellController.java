@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 
 @Controller
 public class ShellController {
-    @RequestMapping("/day3")
+    @RequestMapping("/shell")
     public void echo(HttpServletRequest req, HttpServletResponse rsp){
         try {
 

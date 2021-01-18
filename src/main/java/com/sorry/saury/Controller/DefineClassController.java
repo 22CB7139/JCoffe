@@ -18,7 +18,7 @@ public class DefineClassController {
             return super.defineClass(b,0,b.length);
         }
     }
-    @RequestMapping("/day2")
+    @RequestMapping("/defineclass")
     public void echo(HttpServletRequest req, HttpServletResponse rsp) {
         // defineClass测试
 
@@ -38,10 +38,6 @@ public class DefineClassController {
         } catch (InstantiationException e) {
             e.printStackTrace();
         }
-        // TODO S1.密钥交互
-        // TODO S2.接收加密二进制
-        // TODO S3.defineClass执行后返回相应结果
-
 
     }
 }

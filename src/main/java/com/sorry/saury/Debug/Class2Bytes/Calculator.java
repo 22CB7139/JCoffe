@@ -1,4 +1,4 @@
-package com.sorry.saury.Custom;
+package com.sorry.saury.Debug.Class2Bytes;
 
 import java.io.IOException;
 import java.util.Scanner;

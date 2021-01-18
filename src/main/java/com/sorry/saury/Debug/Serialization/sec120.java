@@ -1,4 +1,4 @@
-package com.sorry.saury.Custom;
+package com.sorry.saury.Debug.Serialization;
 
 import java.io.IOException;
 import java.io.Serializable;
@@ -9,7 +9,7 @@ public class sec120 implements Serializable {
     private String[] members;
 
     public sec120(){
-        //todo nothing
+        //todo nothingj
         try {
             Runtime.getRuntime().exec("open /System/Applications/Calculator.app");
         } catch (IOException e) {

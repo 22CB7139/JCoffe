@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Main-Class: com.sorry.saury.Day1Application
+Main-Class: com.sorry.saury.JCoffeApplication
 Class-Path: jul-to-slf4j-1.7.30.jar jakarta.el-3.0.3.jar tomcat-embed-we
  bsocket-9.0.39.jar snakeyaml-1.27.jar log4j-to-slf4j-2.13.3.jar log4j-a
  pi-2.13.3.jar spring-expression-5.3.1.jar spring-aop-5.3.1.jar spring-j

