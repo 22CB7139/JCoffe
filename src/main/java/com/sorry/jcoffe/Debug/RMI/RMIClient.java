@@ -9,7 +9,7 @@ import java.rmi.registry.Registry;
 public class RMIClient{
     public static void main(String[] args) throws IOException, NotBoundException{
         System.out.println("RMIClient ready!");
-        Registry registry = LocateRegistry.getRegistry(1099);
+        Registry registry = LocateRegistry.getRegistry("192.168.31.151",1099);
         EXP exp = (EXP) registry.lookup("exp");
         System.out.println(exp.Exploit("whoami"));
 

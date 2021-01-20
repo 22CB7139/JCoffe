@@ -12,9 +12,12 @@ public class EXPImpl extends UnicastRemoteObject implements EXP {
 
     @Override
     public String Exploit(String cmd) throws IOException {
-        ProcessBuilder processBuilder = new ProcessBuilder("/bin/sh","-c",cmd);
-        Process process = processBuilder.start();
+
+        //ProcessBuilder processBuilder = new ProcessBuilder("/bin/sh","-c",cmd);
+        Process process = Runtime.getRuntime().exec(cmd);
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
         return bufferedReader.readLine();
+
+
     }
 }
