@@ -20,7 +20,7 @@ public class EXPImpl extends UnicastRemoteObject implements EXP {
         } else {
             p = Runtime.getRuntime().exec(cmd);
         }
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(p.getInputStream(),"GB2312"));
         return bufferedReader.readLine();
 
     }
