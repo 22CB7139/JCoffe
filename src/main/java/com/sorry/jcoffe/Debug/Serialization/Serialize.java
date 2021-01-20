@@ -19,7 +19,7 @@ public class Serialize {
             e.printStackTrace();
         }
     }
-    public static void Seriliazesec120() throws Exception {
+    public static void Serializesec120() throws Exception {
         sec120 test = new sec120();
         test.setLocation("HNUST");
         test.setMembers(new String[]{"zzq", "jjj","shm"});
@@ -32,7 +32,7 @@ public class Serialize {
     public static void Unserializesec120() throws Exception{
         ObjectInputStream ois = new ObjectInputStream(new FileInputStream(new File("sec120.ser")));
         sec120 unsec120 = (sec120) ois.readObject();
-        sec120 aaa = new sec120();
-        System.out.println(unsec120.getLocation()+'\n'+unsec120.getMembers()[0]+unsec120.getMembers()[1]+unsec120.getMembers()[2]);
+        //sec120 aaa = new sec120();
+        //System.out.println(unsec120.getLocation()+'\n'+unsec120.getMembers()[0]+unsec120.getMembers()[1]+unsec120.getMembers()[2]);
     }
 }

@@ -1,6 +1,7 @@
 package com.sorry.jcoffe.Debug.Serialization;
 
 import java.io.IOException;
+import java.io.ObjectInputStream;
 import java.io.Serializable;
 
 public class sec120 implements Serializable {
@@ -31,4 +32,9 @@ public class sec120 implements Serializable {
     public void setMembers(String[] members) {
         this.members = members;
     }
+
+    private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        System.out.println("ysoserial");
+    }
+
 }
