@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class EXPImpl extends UnicastRemoteObject implements EXP {
 
     protected EXPImpl() throws RemoteException {
+        super();
     }
 
     @Override
