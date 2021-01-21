@@ -1,18 +1,20 @@
 package com.sorry.jcoffe.Debug.RMI;
 
-import com.sun.jndi.rmi.registry.ReferenceWrapper;
-
-import javax.naming.NamingException;
-import javax.naming.Reference;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
 
 public class RMIServer {
 
-    public static void main(String[] args) throws RemoteException, NamingException {
+    public static void main(String[] args) throws RemoteException {
+        //在这里将服务端和注册中心放在一起...
         System.setProperty("java.rmi.server.hostname","39.108.244.167");
         Registry registry = LocateRegistry.createRegistry(1099);
+
+        //模拟从注册中心获取服务
+        ObjectInterface exp = new Object();
+        registry.rebind("exp",exp);//rebind不抛出异常
+        System.out.println("RMIServer ready");
 
         //RMIServer远程绑定恶意类
         /*
@@ -21,9 +23,7 @@ public class RMIServer {
         registry.rebind("exp",referenceWrapper);
         */
 
-        EXP exp = new EXPImpl();
-        registry.rebind("exp",exp);//rebind不抛出异常
-        System.out.println("RMIServer ready");
+
 
     }
 }

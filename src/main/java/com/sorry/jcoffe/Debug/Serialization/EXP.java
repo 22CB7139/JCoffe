@@ -1,12 +1,31 @@
-package com.sorry.jcoffe.Debug.RMI;
+package com.sorry.jcoffe.Debug.Serialization;
+
+import com.sorry.jcoffe.Debug.RMI.Object;
 
 import java.io.*;
 import java.rmi.RemoteException;
-import java.rmi.server.UnicastRemoteObject;
 
-public class EXPImpl extends UnicastRemoteObject implements EXP,Serializable {
-    private static final long serialVersionUID = -5809452578272945389L;
-    protected EXPImpl() throws RemoteException {}
+public class EXP implements Serializable {
+    private static final long serialVersionUID = 7439581476576889858L;
+
+    public String target;
+    public String method;
+
+    public String getTarget() {
+        return target;
+    }
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
+    public String getMethod() {
+        return method;
+    }
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
 
     /*
     //defineclass自动执行----Server
@@ -32,17 +51,26 @@ public class EXPImpl extends UnicastRemoteObject implements EXP,Serializable {
     }
     */
 
-    //反序列化自动执行----Client
+    //反序列化自动执行
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        Runtime.getRuntime().exec("open /System/Applications/Calculator.app");
-        System.out.println("ysoserial?");
+        //ois.defaultReadObject();
+        System.out.println("unserialize--readObject()");
+        System.out.println(Exploit("whoami"));
     }
 
-    //函数调用----Server执行并将实例序列化发送给Client
-    @Override
-    public String Exploit(String cmd) throws IOException {
+    //序列化自动执行
+    private void writeObject(ObjectOutputStream oos) throws IOException{
+        //oos.defaultWriteObject();
+        System.out.println("serialize--writeObject()");
+        System.out.println(Exploit("whoami"));
+    }
 
-        System.out.println("函数调用");
+
+    //函数调用----Server执行并将结果发送给Client
+    //Tips-如果返回的是一个恶意类呢?
+    public String Exploit(String cmd) throws IOException{
+
+        System.out.println("函数调用Exploit("+cmd+")");
         Process p;
         String result="";
         String disr;
@@ -55,7 +83,7 @@ public class EXPImpl extends UnicastRemoteObject implements EXP,Serializable {
         while((disr=bufferedReader.readLine())!=null){
             result += disr + "\n";
         }
-        //return to client
+        //return to client 结果返回给客户端
         return result;
     }
 
