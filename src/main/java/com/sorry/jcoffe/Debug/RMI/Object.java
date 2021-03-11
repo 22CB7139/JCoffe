@@ -11,8 +11,17 @@ public class Object extends UnicastRemoteObject implements ObjectInterface {
         super();
     }
 
+    /*
     public String Function(EXP exp) throws IOException,RemoteException{
         return exp.getClass().getName();
+    }
+    */
+
+
+    public EXP Function(String cmd) throws RemoteException{
+        EXP exp = new EXP();
+        exp.setCommand(cmd);
+        return exp;
     }
 
 

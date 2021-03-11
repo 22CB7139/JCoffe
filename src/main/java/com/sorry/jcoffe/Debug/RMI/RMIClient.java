@@ -12,11 +12,13 @@ public class RMIClient{
         System.out.println("RMIClient ready!");
         Registry registry = LocateRegistry.getRegistry("39.108.244.167",1099);
         // RMI远程调用自动反序列化函数传的参数的readObject()
-        // Client端将其序列化出发writeObject
-        // Server端将其反序列化从而出发readObject
+        // Client端将其序列化触发writeObject
+        // Server端将其反序列化从而触发readObject
         ObjectInterface objectInterface = (ObjectInterface) registry.lookup("exp");
-        EXP exp = new EXP();
-        System.out.println(objectInterface.Function(exp));//序列化参数继承自remote的类函数的*参数*,在这里为exp对象
+        //EXP exp = new EXP();
+        //System.out.println(objectInterface.Function(exp));//序列化参数继承自remote的类函数的*参数*,在这里为exp对象
+        //Server端将继承自remote的类
+        System.out.println(objectInterface.Function("whoami"));
 
 
         //rmi of jndi

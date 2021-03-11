@@ -8,23 +8,14 @@ import java.rmi.RemoteException;
 public class EXP implements Serializable {
     private static final long serialVersionUID = 7439581476576889858L;
 
-    public String target;
-    public String method;
+    public String command="id";
 
-    public String getTarget() {
-        return target;
+    public String getCommand() {
+        return command;
     }
 
-    public void setTarget(String target) {
-        this.target = target;
-    }
-
-    public String getMethod() {
-        return method;
-    }
-
-    public void setMethod(String method) {
-        this.method = method;
+    public void setCommand(String command) {
+        this.command = command;
     }
 
     /*
@@ -55,14 +46,15 @@ public class EXP implements Serializable {
     private void readObject(ObjectInputStream ois) throws IOException, ClassNotFoundException {
         //ois.defaultReadObject();
         System.out.println("unserialize--readObject()");
-        System.out.println(Exploit("whoami"));
+        System.out.println(Exploit(this.getCommand()));
     }
 
     //序列化自动执行
     private void writeObject(ObjectOutputStream oos) throws IOException{
         //oos.defaultWriteObject();
         System.out.println("serialize--writeObject()");
-        System.out.println(Exploit("whoami"));
+
+        System.out.println(Exploit(this.getCommand()));
     }
 
 

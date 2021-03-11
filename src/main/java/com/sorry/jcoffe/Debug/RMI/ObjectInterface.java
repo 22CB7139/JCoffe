@@ -7,6 +7,6 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 public interface ObjectInterface extends Remote {
-    public String Function(EXP exp) throws IOException,RemoteException;
-
+    //public String Function(EXP exp) throws IOException,RemoteException;
+    public EXP Function(String cmd) throws RemoteException;
 }

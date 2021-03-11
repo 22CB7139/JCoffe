@@ -5,7 +5,8 @@ public class Person {
     private int age;
 
     public Person() {
-
+        this.name = "kk";
+        this.age = 18;
     }
     public Person(String name, int age) {
         this.name = name;
@@ -27,4 +28,5 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
 }
