@@ -13,19 +13,19 @@ public class Person {
         this.age = age;
     }
 
-    public String getName() {
+    private String getName() {
         return name;
     }
 
-    public int getAge() {
+    private int getAge() {
         return age;
     }
 
-    public void setName(String name) {
+    private void setName(String name) {
         this.name = name;
     }
 
-    public void setAge(int age) {
+    private void setAge(int age) {
         this.age = age;
     }
 

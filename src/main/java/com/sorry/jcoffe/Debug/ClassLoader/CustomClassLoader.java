@@ -3,7 +3,6 @@ package com.sorry.jcoffe.Debug.ClassLoader;
 
 
 import com.sorry.jcoffe.Debug.Class2Bytes.TransforBytes;
-import com.sorry.jcoffe.Debug.Reflection.Person;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -42,8 +41,14 @@ public class CustomClassLoader extends ClassLoader{
             //反射实例化
             Object obj = clazz.newInstance();
             //反射取方法
+            //getMethod和getDeclaredMethod都能够获取到类成员方法
+            //区别在于getMethod只能获取到当前类和父类的所有有权限的方法(如：public)
+            //而getDeclaredMethod能获取到当前类的所有成员方法(不包含父类)。
             Method method1 = obj.getClass().getDeclaredMethod("setName",String.class);
             Method method2 = obj.getClass().getDeclaredMethod("getName");
+            //关闭安全检查
+            method1.setAccessible(true);
+            method2.setAccessible(true);
             //反射调用方法
             method1.invoke(obj,"fuck u internet");
             String result = (String) method2.invoke(obj);
