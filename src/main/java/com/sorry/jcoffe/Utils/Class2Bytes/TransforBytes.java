@@ -1,4 +1,4 @@
-package com.sorry.jcoffe.Debug.Class2Bytes;
+package com.sorry.jcoffe.Utils.Class2Bytes;
 
 import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
@@ -14,8 +14,9 @@ public  class TransforBytes {
         //BASE64Decoder decoder = new BASE64Decoder();
         //byte[] shirocheck = decoder.decodeBuffer(args[1]);
         //CreateFileFromBytes(shirocheck,args[0]);
-        System.out.println(Arrays.toString(BytesFromFile("/Users/0x22cb7139/programing/java/spring/JCoffe/target/classes/com/sorry/jcoffe/Debug/Reflection/Person.class")));
-
+        //System.out.println(Arrays.toString(BytesFromFile("/Users/0x22cb7139/programing/java/spring/JCoffe/target/classes/com/sorry/jcoffe/Debug/Reflection/Person.class")));
+        String classb64 = new BASE64Encoder().encode(BytesFromFile("/Users/0x22cb7139/programing/java/spring/JCoffe/target/classes/com/sorry/jcoffe/Debug/Reflection/Person.class"));
+        System.out.println(classb64);
     }
 
 

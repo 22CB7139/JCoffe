@@ -2,7 +2,7 @@ package com.sorry.jcoffe.Debug.ClassLoader;
 
 
 
-import com.sorry.jcoffe.Debug.Class2Bytes.TransforBytes;
+import com.sorry.jcoffe.Utils.Class2Bytes.TransforBytes;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -46,7 +46,7 @@ public class CustomClassLoader extends ClassLoader{
             //而getDeclaredMethod能获取到当前类的所有成员方法(不包含父类)。
             Method method1 = obj.getClass().getDeclaredMethod("setName",String.class);
             Method method2 = obj.getClass().getDeclaredMethod("getName");
-            //关闭安全检查
+            //关闭安全检查,取非public方法时使用.
             method1.setAccessible(true);
             method2.setAccessible(true);
             //反射调用方法

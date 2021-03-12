@@ -1,4 +1,4 @@
-package com.sorry.jcoffe.Debug.Class2Bytes;
+package com.sorry.jcoffe.Utils.Class2Bytes;
 
 import java.io.IOException;
 import java.util.Scanner;
